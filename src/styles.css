@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body{
+    /* overflow: hidden !important; */
+}
+.main-panel .main-content {
+    margin-top: 35px !important;
+    padding: 30px 5px 0px 5px !important;
+    height: 100vh !important;
+}
+
+.card .card-body .table-responsive {
+    width: 100%;
+    height: calc(100vh - 260px) !important;
+}
+
+
+.card .card-header-danger .card-icon, .card .card-header-danger .card-text, .card .card-header-danger:not(.card-header-icon):not(.card-header-text), .card.bg-danger, .card.card-rotate.bg-danger .front, .card.card-rotate.bg-danger .back{
+    background: linear-gradient(60deg, #a72d93, #ba39a4) !important;
+}
+
+.sidebar[data-color=danger] li.active > a{
+    background-color: #a72d93 !important;
+    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(167 45 147 / 40%) !important;
+}
+
+.mat-form-field-infix {
+    height: 45px !important;
+}
+
+th.mat-header-cell{
+    background-color: #565454  !important;
+    color: white !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    height: 35px !important;
+    padding: 5px 8px !important;
+
+}
+
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    width: 60px !important;
+    padding-left: 15px !important;
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    width: 130px !important;
+    text-align: center !important;
+    padding-right: 15px !important;
+}
+
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #a72d93 !important;
+}
+
+
+.form-control:focus {
+    border-color: transparent !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.form-control:focus, .bmd-form-group.mat-focused .form-control {
+    background-size: calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem) !important;
+    transition-duration: 0.3s;
+}
+
+
+.mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+    color: rgb(12 12 12 / 80%) !important;
+    background-color: #efefef !important;
+    cursor: not-allowed !important;
+}
+
+.form-control[disabled], fieldset[disabled] .form-control, .form-group .form-control[disabled], fieldset[disabled] .form-group .form-control {
+    border-bottom: none !important;
+}
+
+.mat-dialog-container {
+    padding : 0px !important;
+}
+
+.mat-dialog-container .container{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    max-width: calc(100% - 20px) !important;
+}
+
+
+.mat-dialog-actions {
+    padding: 15px 0 !important;
+}
+  
+.card-category  .mat-form-field-label {
+/*change color of label*/
+color: white !important;
+}
+
+.card-category .mat-focused .mat-form-field-label {
+/*change color of label*/
+color: white !important;
+}
+
+.card-category .mat-form-field-underline {
+/*change color of underline*/
+background-color: white !important;
+} 
+
+.card-category .mat-form-field-ripple {
+/*change color of underline when focused*/
+background-color: white !important;;
+}
+
+
+.invalid-feedback {
+    margin-top: -5px !important;
+}
+
+.custom-small-block{
+    min-width: 150px !important;
+    width: 200px !important;
+    word-break: break-all !important;
+}
+
+.custom-am-val{
+    text-align: end !important;
+    padding-right: 30px !important;
+}
+
+.custom-input-am{
+    text-align: end !important;
+}
+
+
+.no-data{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1090px){
+    .main-panel .main-content{
+        overflow-y: hidden;
+        min-height: calc(100vh);
+        height: auto !important;
+    }
+}

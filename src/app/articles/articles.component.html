@@ -1,0 +1,88 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">News articles</h4>
+                <div class="row">
+                    <div class="col-sm-9 col-md-9 col-lg-9 card-category">
+                        <mat-form-field>
+                            <mat-label>Filter</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" autocomplete="off" #inputSearch>
+                        </mat-form-field>
+                    </div>
+                    <!-- <div class="col-sm-3 col-md-3 col-lg-3">
+                        <button mat-raised-button type="button" (click)="onAdd()" [disabled]="filterValue != ''"
+                            class="btn btn-danger custom-add-btn pull-right">
+                            <i class="material-icons">add</i> Add New
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table grid-table" mat-table [dataSource]="dataSource" matSort>
+
+                        <ng-container matColumnDef="urlToImage">
+                            <th mat-header-cell *matHeaderCellDef> Image </th>
+                            <td mat-cell *matCellDef="let record">
+                                <!-- <span class="mobile-label">ID:</span>  -->
+                                <img class="img-fluid" [src]="record.urlToImage"/>
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="source">
+                            <th mat-header-cell *matHeaderCellDef> Source </th>
+                            <td mat-cell *matCellDef="let record">
+                                {{record.source.name}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="author">
+                            <th mat-header-cell *matHeaderCellDef> Author </th>
+                            <td mat-cell *matCellDef="let record">
+                                {{record.author}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="title">
+                            <th mat-header-cell *matHeaderCellDef> Title </th>
+                            <td mat-cell *matCellDef="let record">
+                                {{record.title}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="publishedAt">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                            <td mat-cell *matCellDef="let record">
+                                {{record.publishedAt}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="url">
+                            <th mat-header-cell *matHeaderCellDef> URL </th>
+                            <td mat-cell *matCellDef="let record">
+                                <a [href]="record.url" target="_blank">Link</a>
+                                <!-- <button mat-raised-button type="button" (click)="onEdit(record)"
+                                    class="btn btn-success btn-link btn-sm btn-just-icon">
+                                    <i class="material-icons">edit</i>
+                                </button> -->
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell no-data" colspan="6">No data Found</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <mat-paginator [length]="articleStore.totalLength" [pageSize]="articleStore.pageSize"
+                (page)="pageEvent($event)" [pageIndex]="articleStore.currentPage - 1">
+            </mat-paginator>
+        </div>
+    </div>
+</div>
